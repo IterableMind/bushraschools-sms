@@ -2,7 +2,7 @@ import traceback
 from flask import render_template, url_for, flash, redirect, current_app, jsonify, request
 from flask import send_file
 import io
-from . import admin_bp
+from acadex.admin import admin_bp
 from .forms import * 
 from ..models import db, SchoolInfo, Teacher, User, Grade, Stream, Student, Subject, Role, SchoolBranch, Staff
 from .. models import TeacherSubjectAssignment, Exam, ExamMarks, GradeStreamBranch
