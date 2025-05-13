@@ -49,8 +49,8 @@
     {% endwith %}
 </div>
 
- <div class="container-fluid">
-   <div class="accordion-item bg-white p-3 shadow-sm mt-1">
+ <div class="container">
+   <div class="accordion-item bg-white p-4 shadow-sm mt-1">
         <form action="{{ url_for('admin_bp.teachers_classic_view') }}" method="post">
             <div>
                 <b>Select Branch to view Teachers</b>
@@ -63,27 +63,25 @@
                     {% endif %}
                 </select>
             </div>
-            <h2 class="accordion-header" id="flush-headingThree">
+            <!-- <h2 class="accordion-header" id="flush-headingThree">
                 <button class="accordion-button collapsed" 
                 type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
                 <h6 class="fw-light p-1 mt-2">Display Options</h6>
                 <i class="bi bi-chevron-down mx-2"></i>
                 </button>
-            </h2>
-            <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
+            </h2> -->
+            <!-- <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
                 <div class="accordion-body bg-white p-2 pb-2">
                     <a href="{{ url_for('admin_bp.view_teachers') }}" style="text-decoration: none;">
                     <button type="button" class="btn btn-danger btn-sm">
                         <i class="fa fa-print"></i> Print View
                     </button>
-                    </a>
-                    <!-- <a href="" class="mx-2"> -->
+                    </a> 
                     <button type="submit" class="btn btn-secondary btn-sm">
                         <i class="fa fa-eye" aria-hidden="true"></i> Detailed View
-                    </button>
-                    <!-- </a> -->
+                    </button> 
                 </div>
-            </div>
+            </div> -->
         </form>
     </div>
  </div>

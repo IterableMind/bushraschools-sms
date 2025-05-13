@@ -1,9 +1,9 @@
 from flask import Flask, g
-from .auth import auth_bp
-from .admin import admin_bp
-from .teachr import teachr_bp
-from .config import Config
-from .models import db, SchoolInfo, Teacher, User, Grade
+from acadex.auth import auth_bp
+from acadex.admin import admin_bp
+from acadex.teachr import teachr_bp
+from acadex.config import Config
+from acadex.models import db, SchoolInfo, Teacher, User, Grade
 from flask_migrate import Migrate
 from flask_login import LoginManager
 

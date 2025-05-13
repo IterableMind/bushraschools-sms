@@ -3,19 +3,19 @@ from flask import render_template, url_for, flash, redirect, current_app, jsonif
 from flask import send_file
 import io
 from acadex.admin import admin_bp
-from .forms import * 
-from ..models import db, SchoolInfo, Teacher, User, Grade, Stream, Student, Subject, Role, SchoolBranch, Staff
-from .. models import TeacherSubjectAssignment, Exam, ExamMarks, GradeStreamBranch
-from ..utils.utils import generate_username
-from ..utils.generate_students_lists import generate_marklist
-from ..utils.generate_teachers_pdf_list import generate_teacher_list_pdf
-from ..utils.generate_pdf import generate_report_cards_pdf
-from ..utils.image_processor import preprocess_image as img_editor 
+from acadex.admin.forms import * 
+from acadex.models import (
+    db, SchoolInfo, Teacher, User, Grade, Stream, Student, Subject, Role, SchoolBranch, Staff, TeacherSubjectAssignment, Exam, ExamMarks, GradeStreamBranch
+)
+from acadex.utils.utils import generate_username
+from acadex.utils.generate_students_lists import generate_marklist
+from acadex.utils.generate_teachers_pdf_list import generate_teacher_list_pdf
+from acadex.utils.generate_pdf import generate_report_cards_pdf
+from acadex.utils.image_processor import preprocess_image as img_editor 
 from sqlalchemy.exc import SQLAlchemyError, IntegrityError
 from sqlalchemy import or_, and_, func, distinct
 from werkzeug.exceptions import InternalServerError
 from flask_login import login_required, current_user, logout_user
-
 
 
 ACTIVE = 'link--active'

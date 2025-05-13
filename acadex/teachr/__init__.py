@@ -8,4 +8,4 @@ teachr_bp = Blueprint(
   template_folder='templates'
 )
 
-from . import routes
+from acadex.teachr import routes

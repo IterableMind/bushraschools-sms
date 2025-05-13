@@ -1,8 +1,8 @@
 from flask import render_template, url_for, flash, redirect
-from . import auth_bp
-from ..admin import admin_bp
-from .forms import LoginForm
-from ..models import Teacher, User, db 
+from acadex.auth import auth_bp
+from acadex.admin import admin_bp
+from acadex.auth.forms import LoginForm
+from acadex.models import Teacher, User, db 
 from flask_login import login_user, login_required
 
 
