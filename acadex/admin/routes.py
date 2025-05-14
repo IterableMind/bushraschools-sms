@@ -1407,67 +1407,7 @@ def fetch_subjects_by_grade():
         return jsonify({'success': True, 'subjects': filtered_subjects})
     except Exception as e:
         return jsonify({'success': False, 'message': 'Error fetching subjects'}), 500
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        
 
 @admin_bp.route('/get_teacher_subjects/<teacher_id>', methods=['GET'])
 def get_teacher_subjects(teacher_id):
