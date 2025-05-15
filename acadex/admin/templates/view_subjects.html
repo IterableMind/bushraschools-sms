@@ -16,7 +16,8 @@
         <h5 class="text-center fw-bold">
           {{ subject_name|upper }}
         </h5>
-        <table class="table table-bordered border table-hover">
+        <div class="table-responsive small">
+            <table class="table table-bordered border table-hover">
           <thead class="table-light">
             <tr>
               <th style="width: 1%">#</th>
@@ -38,6 +39,7 @@
             {% endfor %}
           </tbody>
         </table>
+        </div>
       </div>
     {% endfor %}
   {% else %}
