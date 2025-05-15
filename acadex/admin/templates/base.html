@@ -4,43 +4,37 @@
 {% block side_nav %}
 <ul class="list-unstyled"> 
   <li class="{{ d_active }}">
-    <a href="{{ url_for('admin_bp.dashboard') }}" 
-      class="text-white text-decoration-none">
+    <a href="{{ url_for('admin_bp.dashboard') }}" class="text-white text-decoration-none">
       <i class="material-icons">dashboard</i>
       <span class="nav-label">Dashboard</span>
     </a>
   </li>
   <li class="{{ sub_active }}">
-    <a href="{{ url_for('admin_bp.add_subject') }}" 
-     class="text-white text-decoration-none">
+    <a href="{{ url_for('admin_bp.add_subject') }}" class="text-white text-decoration-none">
       <i class="material-icons">book</i>
       <span class="nav-label">Subjects</span>
     </a>
   </li>
   <li class="{{ s_active }}">
-    <a href="{{ url_for('admin_bp.student_dash') }}" 
-      class="text-white text-decoration-none">
+    <a href="{{ url_for('admin_bp.student_dash') }}" class="text-white text-decoration-none">
       <i class="material-icons">diversity_3</i>
       <span class="nav-label">Students</span>
     </a>
   </li>
   <li class="{{ t_active }}">
-    <a href="{{ url_for('admin_bp.view_teachers') }}" 
-      class="text-white text-decoration-none">
+    <a href="{{ url_for('admin_bp.view_teachers') }}" class="text-white text-decoration-none">
       <i class="material-icons">cast_for_education</i>
       <span class="nav-label">Teachers</span>
     </a>
   </li>
   <li class="{{ st_active }}">
-    <a href="{{ url_for('admin_bp.manage_staff') }}" 
-      class="text-white text-decoration-none">
+    <a href="{{ url_for('admin_bp.manage_staff') }}" class="text-white text-decoration-none">
       <i class="material-icons">people</i>
       <span class="nav-label">Staff</span>
     </a>
   </li>
   <li class="{{ b_active }}">
-    <a href="{{ url_for('admin_bp.manage_branch') }}" 
-      class="text-white text-decoration-none">
+    <a href="{{ url_for('admin_bp.manage_branch') }}" class="text-white text-decoration-none">
       <i class="material-icons">diversity_1</i>
       <span class="nav-label">Branches</span>
     </a>
@@ -59,15 +53,13 @@
   </li>
   <hr>
   <li class="{{ p_active }}">
-    <a href="{{ url_for('admin_bp.display_students_list') }}"
-     class="text-white text-decoration-none">
+    <a href="{{ url_for('admin_bp.display_students_list') }}" class="text-white text-decoration-none">
       <i class="material-icons">print</i>
       <span class="nav-label">Printouts</span>
     </a>
   </li>
   <li style="margin-top: 60px;">
-    <a href="{{ url_for('admin_bp.logout') }}" 
-      class="text-white text-decoration-none">
+    <a href="{{ url_for('admin_bp.logout') }}" class="text-white text-decoration-none">
       <i class="material-icons">logout</i>
       <span class="nav-label fw-bold">Logout</span>
     </a>
@@ -76,37 +68,109 @@
 {% endblock side_nav %}
 
 <!-- Horizontal navigation -->
-{% block horizontal_nav %} 
+{% block horizontal_nav %}
 {% endblock horizontal_nav %}
 
 <!-- Main content area -->
-{% block main_content %} 
+{% block main_content %}
 {% endblock main_content %}
 
-<!-- Horizontal navs for smalll screens --> 
+<!-- Horizontal navs for small screens --> 
 {% block horizontal_nav_sm_screen %}
-  <nav class="nav dis-none has-background-primary">
+<nav class="nav dis-none has-background-primary horizontal-scroll">
+  <div class="nav-inner">
     <a href="{{ url_for('admin_bp.dashboard') }}" 
-    class="nav__link {{ d_active }}">
+       class="nav__link {{ d_active }} {% if d_active %}active{% endif %}">
       <i class="material-icons nav__icon">dashboard</i>
       <span class="nav__text">Dashboard</span>
     </a>
-    <a href="{{ url_for('admin_bp.view_subjects') }}" class="nav__link {{ sub_active }}">
+    <a href="{{ url_for('admin_bp.view_subjects') }}" 
+       class="nav__link {{ sub_active }} {% if sub_active %}active{% endif %}">
       <i class="material-icons nav__icon">school</i>
       <span class="nav__text">Subjects</span>
     </a>
-    <a href="{{ url_for('admin_bp.student_dash') }}" class="nav__link {{ s_active }}">
+    <a href="{{ url_for('admin_bp.student_dash') }}" 
+       class="nav__link {{ s_active }} {% if s_active %}active{% endif %}">
       <i class="material-icons nav__icon">diversity_3</i>
       <span class="nav__text">Students</span>
     </a>
     <a href="{{ url_for('admin_bp.view_teachers') }}" 
-      class="nav__link {{ t_active }}">
+       class="nav__link {{ t_active }} {% if t_active %}active{% endif %}">
       <i class="material-icons nav__icon">cast_for_education</i>
       <span class="nav__text">Teachers</span>
-    </a> 
-    <a href="{{ url_for('admin_bp.add_new_exam') }}" class="nav__link {{ t_active }}">
-      <i class="material-icons">analytics</i>
+    </a>
+    <a href="{{ url_for('admin_bp.add_new_exam') }}" 
+       class="nav__link text-white text-decoration-none {{ ex_active }} {% if ex_active %}active{% endif %}">
+      <i class="material-icons nav__icon">analytics</i>
       <span class="nav__text">Exams</span>
     </a>
-  </nav>
+    <a href="{{ url_for('admin_bp.manage_branch') }}" 
+       class="nav__link {{ b_active }} {% if b_active %}active{% endif %}">
+      <i class="material-icons nav__icon">house</i>
+      <span class="nav__text">Branches</span>
+    </a>
+    <a href="{{ url_for('admin_bp.manage_staff') }}" 
+       class="nav__link {{ st_active }} {% if st_active %}active{% endif %}">
+      <i class="material-icons nav__icon">people</i>
+      <span class="nav__text">Staff</span>
+    </a>
+    <a href="#" class="nav__link">
+      <i class="material-icons nav__icon">sms</i>
+      <span class="nav__text">SMS</span>
+    </a>
+    <a href="{{ url_for('admin_bp.display_students_list') }}" 
+       class="nav__link {{ p_active }} {% if p_active %}active{% endif %}">
+      <i class="material-icons nav__icon">print</i>
+      <span class="nav__text">Printouts</span>
+    </a>
+    <a href="{{ url_for('admin_bp.logout') }}" class="nav__link">
+      <i class="material-icons nav__icon">logout</i>
+      <span class="nav__text"><b>Logout</b></span>
+    </a>
+  </div>
+</nav>
+
+<!-- Styling -->
+<style>
+  .horizontal-scroll {
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
+  .horizontal-scroll::-webkit-scrollbar {
+    display: none; /* Hide scrollbar on Chrome/Safari */
+  }
+
+  .nav-inner {
+    display: flex;
+    flex-wrap: nowrap;
+  }
+
+  .nav__link {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    min-width: 80px;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+  }
+
+  .nav__link.active {
+    background-color: rgba(255, 255, 255, 0.1); /* Optional highlight */
+    border-bottom: 2px solid white;
+  }
+</style>
+
+<!-- Scroll active link into view -->
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const activeLink = document.querySelector(".nav__link.active");
+    if (activeLink) {
+      activeLink.scrollIntoView({ behavior: "smooth", inline: "center", block: "nearest" });
+    }
+  });
+</script>
 {% endblock horizontal_nav_sm_screen %}
